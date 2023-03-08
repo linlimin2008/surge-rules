@@ -557,6 +557,32 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do reject
 # > zhangshangyingxionglianmeng
 ^https?:\/\/mlol\.qt\.qq\.com\/go\/recommend reject
 
+# ======= 小红书 ======= #
+
+# > 小红书_开屏广告@ddgksf2013
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js
+# > 小红书_首页瀑布流@ddgksf2013
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\? url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js
+# > 小红书_启动处理@ddgksf2013
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\? url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js
+# > 小红书_热搜发现@ddgksf2013
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hot_list url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js
+# > 小红书_默认填词@ddgksf2013
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hint url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js
+# > 小红书_去除购物@ddgksf2013
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\/categories url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js
+# > 小红书_猜你想搜@ddgksf2013
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/trending url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js
+# > 小红书_通用广告请求@ddgksf2013
+^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/v\d\/(tag\/)?ads url reject-dict
+# > 小红书_隐私屏蔽@ddgksf2013
+^https?:\/\/referee\.xiaohongshu\.com\/v\d\/stateReport url reject-dict
+# > 小红书_Switches@ddgksf2013
+^https?:\/\/pages\.xiaohongshu\.com\/data\/native\/matrix_switches url reject-dict
+# > 小红书_青少年请求@ddgksf2013
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/user\/teenager\/status url reject-dict
+# > 小红书_启动引导@ddgksf2013
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/guide\/home_guide url reject-dict
 
 [Script]
 # > 12306
@@ -577,10 +603,6 @@ ShunFeng=type=http-response,pattern=https://ccsp-egmas.sf-express.com/cx-app-bas
 Stay=type=http-response,pattern=^https?:\/\/api\.shenyin\.name\/stay-fork\/browse\/featured$,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/stay.js
 # > WeChat110
 WeChat110=type=http-response,pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?,requires-body=1,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js
-# > XiaoHongShu
-XiaoHongShu=type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/xiaohongshu.js
-XiaoHongShu=type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\?,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/xiaohongshu.js
-XiaoHongShu=type=http-response,pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\?,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/xiaohongshu.js
 
 
 [MITM]
